@@ -22,6 +22,23 @@
 public class MergeSortTester 
 {
 
+    public static void populate (int[] arr){
+	for(int i = 0; i < arr.length; i++){
+	    int randomInt = (int)(Math.random()*arr.length);
+	    arr[i] = randomInt;
+	}
+    }
+
+    public static void timer(int x){
+	int[] one = new int[x];
+	populate(one);
+	//	MergeSort.printArray(one);
+	long startTime = System.nanoTime();
+	MergeSort.sort(one);
+	long sortTime = System.nanoTime() - startTime;
+	//MergeSort.printArray(one);
+	System.out.println("Sorting time for n=" + x + ":"  + sortTime);
+    }
     /******************************
      * execution time analysis 
      * <INSERT YOUR DESCRIPTION HERE OF 
@@ -30,6 +47,9 @@ public class MergeSortTester
      ******************************/
     public static void main( String[] args ) 
     {
+	for(int i = 0; i<8; i++){
+	    timer((int)Math.pow(10,i));
+	}
 
     }//end main
 
