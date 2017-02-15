@@ -15,6 +15,7 @@
   Mean execution times for dataset of size n:
   Batch size:   10
 
+  Example results:
   n = 1:        274
   n = 2:        2914
   n = 5:        8909
@@ -35,7 +36,11 @@
 
 
   ANALYSIS:
-  The runtime of mergesort is O(nlogn). 
+  The runtime of mergesort is O(nlogn). For large values, as n is increased by
+  some factor, the time it takes to sort increases by a relatively similar
+  factor, albeit slighter higher. This rules out O(n^2) or worst as well as 
+  O(n) or better, leaving O(nlogn). Graphing the data suggests that this is
+  an accurate analysis.
   ======================================*/
 
 public class MergeSortTester 
